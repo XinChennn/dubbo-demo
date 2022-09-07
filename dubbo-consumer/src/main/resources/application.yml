@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: dubbo-consumer
+server:
+  port: 8000
+
+dubbo:
+  registry:
+    timeout: 5000
+#    注册中心的地址
+    address: zookeeper://127.0.0.1:2181
+    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+  config-center:
+    timeout: 5000
+    address: zookeeper://127.0.0.1:2181
+  metadata-report:
+    timeout: 5000
+    address: zookeeper://127.0.0.1:2181
+  provider:
+    version: 1.0.0
+  application:
+    register-mode: instance

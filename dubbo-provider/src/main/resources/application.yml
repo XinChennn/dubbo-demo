@@ -1,0 +1,26 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: dubbo-provider
+
+dubbo:
+  scan:
+    base-packages: org.example.service.impl
+
+  registry:
+    timeout: 5000
+    address: zookeeper://127.0.0.1:2181
+#    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+
+  protocol:
+    name: tri
+    port: -1
+  config-center:
+    timeout: 5000
+    address: zookeeper://127.0.0.1:2181
+  metadata-report:
+    timeout: 5000
+    address: zookeeper://127.0.0.1:2181
+  consumer:
+    version: 1.0.0
